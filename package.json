@@ -2,18 +2,25 @@
   "name": "simple-node-cli-boilerplate",
   "version": "1.0.0",
   "description": "Simple node-based CLI starter bolierplate for personal use.",
+  "type": "module",
   "main": "dist/index.js",
   "scripts": {
-    "build": "rimraf dist && npx tsc",
+    "build": "npm run lint && rimraf dist && npx tsc",
     "start": "node ./dist/index.js",
-    "start:build": "npm run build && npm start"
+    "start:build": "npm run build && npm start",
+    "lint": "eslint ./src"
   },
   "keywords": [],
   "author": "Bisue",
   "license": "MIT",
   "devDependencies": {
+    "@eslint/js": "^9.1.1",
     "@types/node": "^20.12.7",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "prettier": "^3.2.5",
     "rimraf": "^5.0.5",
-    "typescript": "^5.4.5"
+    "typescript": "^5.4.5",
+    "typescript-eslint": "^7.7.0"
   }
 }
