@@ -1,0 +1,16 @@
+version: '3.3'
+services:
+  database:
+    image: mysql:8
+    restart: unless-stopped
+    env_file:
+      - .env
+    ports:
+      - 3306:3306
+    command:
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_unicode_ci
+    # volumes:
+    #   - database_data:/var/lib/mysql
+volumes:
+  database_data:
